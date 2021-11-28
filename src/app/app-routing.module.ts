@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { TablaMascotasComponent } from './components/tabla-mascotas/tabla-mascotas.component';
+import { FundacionesComponent } from './components/fundaciones/fundaciones.component';
+import { MascotasComponent } from './components/mascotas/mascotas.component';
+
+
 
 const routes: Routes = [
-  {path: 'mascotas', component: TablaMascotasComponent},
+  {path: 'mascotas', component:MascotasComponent },
   // {path:'**', redirectTo:'mascotas'} // redirecciona a otra ruta ya creada, el ** es cuando no encuentra la ruta
+  {path:'fundaciones', component: FundacionesComponent},
   {path:'**', component: NotFoundComponent}
 ];
 
