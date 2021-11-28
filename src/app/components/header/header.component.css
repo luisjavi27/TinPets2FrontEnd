@@ -1,0 +1,63 @@
+/* ---- GENERAL ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* .body {
+    background-color: #E4F6DE;
+    position: relative;
+    min-height: 100vh;
+} */
+
+
+
+/* ------ TYPOGRAPHY ------ */
+body {
+    font-family: 'Ruluko', sans-serif;
+}
+.nav_items {
+    font-size: 25px;
+}
+
+/* --- HEADER --- */
+.header{
+    height: 220px;
+    background-image: url(img/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+/* --- NAV MENU --- */
+
+nav {
+    background-color: white;
+    padding: 10px;
+}
+nav ul {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav_items {
+    margin: 0 auto;
+    padding: 5px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    color: #295969;
+    text-decoration: none;
+    background-color: white;
+}
+
+.nav_items:hover{
+    background-color: #A0D5E7;
+}
+
+
+
+
