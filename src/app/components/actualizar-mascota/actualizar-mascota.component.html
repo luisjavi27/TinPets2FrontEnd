@@ -1,0 +1,51 @@
+<div class="contenedor">
+    <h1>Actualizar información</h1>
+    <form [formGroup]= "formActMascota" >
+        <div class="row mb-3">
+          <label for="inputMascota" class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" id="inputMascota" formControlName="nombre"  value={{mascota.nombre}}>
+            <!-- <input type="text" class="form-control" id="inputMascota" formControlName="nombre" > -->
+            
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="inputEdad" class="col-sm-2 col-form-label">Edad</label>
+          <div class="col-sm-7">
+            <input type="number" class="form-control" id="inputEdad" formControlName="edad" value={{mascota.edad}} >
+          </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="inputEspecie" class="col-sm-2 col-form-label">Especie</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" id="inputEspecie" formControlName="especie" value={{mascota.especie}} >
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="inputFundacion" class="col-sm-2 col-form-label">Fundación</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" id="inputFundacion" formControlName="fundacion"  value={{mascota.fundacion}}>
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+          <div class="col-sm-7 offset-sm-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox"  id="condicionEspecial" checked={{mascota.especial}} formControlName="especial" >
+              <label class="form-check-label" for="gridCheck1">
+                Condiciones especiales de salud
+              </label>
+            </div>
+        
+          </div>
+        </div>
+
+        
+        <button type="submit" class="btn btn-primary" (click)="actualizarMascota()"  >Guardar</button>
+        
+      </form>
+</div>

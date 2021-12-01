@@ -1,9 +1,9 @@
 .contenedor{
     text-align: center;
+    width: 90%;
+    margin: 50px auto;
 }
 
-.titulo{
-    font-size:200px;
-    margin-top: 100px;
-    
+.contenedor img{
+    height:50vh;
 }

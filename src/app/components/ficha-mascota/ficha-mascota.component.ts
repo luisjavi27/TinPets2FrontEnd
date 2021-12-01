@@ -2,21 +2,41 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { mascotasModel } from 'src/app/models/mascotas';
 import { MascotasService } from '../../services/mascotas/mascotas.service';
+import { DataMascotaService } from '../../services/data-mascota/data-mascota.service';
+
 
 
 @Component({
-  selector: 'app-tabla-mascotas',
-  templateUrl: './tabla-mascotas.component.html',
-  styleUrls: ['./tabla-mascotas.component.css']
+  selector: 'app-ficha-mascota',
+  templateUrl: './ficha-mascota.component.html',
+  styleUrls: ['./ficha-mascota.component.css']
 })
-export class TablaMascotasComponent implements OnInit {
+export class FichaMascotaComponent implements OnInit {
 
   public mascotas: mascotasModel[]=[];
+  
+  
+  
 
-  constructor(private MascotasService: MascotasService, private router: Router) { }
+  constructor(private MascotasService: MascotasService, private router: Router, public dataMascotaService:DataMascotaService) { }
 
   async ngOnInit(): Promise<void> {
     this.mascotas= await this.obtenerMascotas();
+  }
+
+
+  public async  obtenerMascota(id: number): Promise<any> {
+    this.dataMascotaService.info=id;
+    try {
+      const response = await this.MascotasService.obtenerMascota(id);
+     
+      return response.datos;
+    }
+
+    catch (error) {
+      this.router.navigate(['/error']);
+    }
+
   }
 
   public async  obtenerMascotas(): Promise<any> {
@@ -45,7 +65,6 @@ export class TablaMascotasComponent implements OnInit {
   }
 
 }
-function Async(response: any): ((value: any) => any) | null | undefined {
-  throw new Error('Function not implemented.');
-}
+
+
 

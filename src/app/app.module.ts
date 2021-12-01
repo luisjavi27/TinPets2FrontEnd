@@ -13,6 +13,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { MascotasService } from './services/mascotas/mascotas.service';
 import { FundacionesService } from './services/fundaciones/fundaciones.service';
 import { ErrorComponent } from './components/error/error.component';
+import { FormularioMascotaComponent } from './components/formulario-mascota/formulario-mascota.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FichaMascotaComponent } from './components/ficha-mascota/ficha-mascota.component';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { ActualizarMascotaComponent } from './components/actualizar-mascota/actualizar-mascota.component';
+import { DataMascotaService } from './services/data-mascota/data-mascota.service';
 
 @NgModule({
   declarations: [
@@ -23,15 +29,20 @@ import { ErrorComponent } from './components/error/error.component';
     NotFoundComponent,
     FundacionesComponent,
     MascotasComponent,
-    ErrorComponent
+    ErrorComponent,
+    FormularioMascotaComponent,
+    FichaMascotaComponent,
+    NosotrosComponent,
+    ActualizarMascotaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
   ],
-  providers: [MascotasService, FundacionesService], 
+  providers: [MascotasService, FundacionesService, DataMascotaService], 
 
   bootstrap: [AppComponent]
 })

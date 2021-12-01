@@ -1,0 +1,26 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let mascota of mascotas; let i = index">
+<div class="card border-success mb-3" style="max-width: 540px;" >
+    <div class="row g-0 .row-cols-md-2" >
+      <div class="col-md-4">
+        <img src="../../../assets/boxcat404.jpg" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body ">
+          <h5 class="card-title">{{mascota.nombre }}</h5>
+          <p class="card-text">Especie: {{mascota.especie}}</p>
+          <p class="card-text">Edad: {{mascota.edad}} años</p>
+          <p class="card-text">Sexo: </p>
+          <p class="card-text">Fundación: {{mascota.fundacion}}</p>
+          
+          <div class="text-end">
+            <button type="button" class="btn btn-outline-primary" (click)="obtenerMascota(mascota.idmascotas)" routerLink="/formularioEditarMascota" >Actualizar</button>
+          <button type="button" class="btn btn-outline-danger" (click)="eliminarMascota(mascota.idmascotas)">Eliminar</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -3,10 +3,13 @@ footer {
     color: #295969;
     width: 100%;
     padding: 10px 0;
-   
     text-align: center;
-    position: absolute;
-    bottom: 0;
+
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+   
 }
 footer p {
     font-size: 18px;

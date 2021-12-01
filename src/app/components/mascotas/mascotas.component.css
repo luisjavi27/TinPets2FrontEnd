@@ -1,8 +1,17 @@
 .contenedor{
-    width:90%;
-    margin: 50px auto;
+    width:100%;
+    background-color: #E4F6DE;
+    margin-bottom: 20px;
+    padding: 10px 100px;
+    color: #295969;
 }
 
 h1{
     margin-bottom: 20px;
+    margin-top: 20px;
+}
+.btn{
+    margin-left: 50%;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }

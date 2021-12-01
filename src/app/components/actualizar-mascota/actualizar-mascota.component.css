@@ -1,0 +1,14 @@
+.contenedor{
+    padding: 10px 100px;
+    background-color: #E4F6DE;
+    color: #295969;
+}
+
+form{
+    width: 50%;
+    margin: 50px auto;
+}
+h1{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

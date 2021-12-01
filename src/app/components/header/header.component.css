@@ -34,28 +34,29 @@ body {
 
 nav {
     background-color: white;
+    /* background-color: #A0D5E7; */
     padding: 10px;
 }
 nav ul {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .nav_items {
-    margin: 0 auto;
-    padding: 5px;
+    margin:  auto;
+    padding: 2px 20px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
     color: #295969;
     text-decoration: none;
-    background-color: white;
+    background-color: #A0D5E7;
 }
 
 .nav_items:hover{
-    background-color: #A0D5E7;
+    background-color: #A0C5E7;
 }
 
 

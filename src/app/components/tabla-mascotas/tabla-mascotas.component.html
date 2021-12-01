@@ -3,19 +3,19 @@
       <tr>
         <th scope="col">#</th>
         
-        <th scope="col">nombre</th>
-        <th scope="col">raza</th>
-        <th scope="col">edad</th>
-        <th scope="col">fundación</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Especie</th>
+        <th scope="col">Años</th>
+        <th scope="col">Fundación</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let mascota of mascotas; let i = index">
         <th scope="row">{{i+1}}</th>
-        <td>{{ mascota.nombre }}</td>
+        <td>{{mascota.nombre }}</td>
         <td>{{mascota.especie}}</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+        <td>{{mascota.edad}}</td>
+        <td>{{mascota.fundacion}}</td>
         <td><button type="button" class="btn btn-outline-danger" (click)="eliminarMascota(mascota.idmascotas)">Eliminar</button></td>
       </tr>
     </tbody>

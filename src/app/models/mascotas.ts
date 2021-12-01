@@ -1,5 +1,9 @@
 export interface mascotasModel{
     idmascotas:number,
     nombre:string, 
-    especie:string
+    edad: number,
+    especie:string, 
+    fundacion:string,
+    especial:string
+
 }
