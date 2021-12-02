@@ -27,15 +27,16 @@ export class FichaMascotaComponent implements OnInit {
 
   public async  obtenerMascota(id: number): Promise<any> {
     this.dataMascotaService.info=id;
-    try {
-      const response = await this.MascotasService.obtenerMascota(id);
+    this.router.navigate([`/formularioEditarMascota/${id}`]);
+    // try {
+    //   const response = await this.MascotasService.obtenerMascota(id);
      
-      return response.datos;
-    }
+    //   return response.datos;
+    // }
 
-    catch (error) {
-      this.router.navigate(['/error']);
-    }
+    // catch (error) {
+    //   this.router.navigate(['/error']);
+    // }
 
   }
 

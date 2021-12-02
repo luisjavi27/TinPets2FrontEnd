@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { mascotasModel } from 'src/app/models/mascotas';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MascotasService } from '../../services/mascotas/mascotas.service';
 import { DataMascotaService } from '../../services/data-mascota/data-mascota.service';
 
@@ -15,40 +14,39 @@ export class ActualizarMascotaComponent implements OnInit {
 
   public formActMascota: FormGroup = new FormGroup({});
  
-  public mascota: mascotasModel={
-    idmascotas: 0,
-    nombre: '',
-    edad: 0,
-    especie: '',
-    fundacion: '',
-    especial: ''
-  };
+  public mascota: any={};
 
- 
-
-    
-  constructor(private formBuilder: FormBuilder, public MascotasService: MascotasService, private router: Router, public dataMascotaService:DataMascotaService) { }
+     
+  constructor(private formBuilder: FormBuilder, public MascotasService: MascotasService, private router: Router, public dataMascotaService:DataMascotaService, private route:ActivatedRoute) { }
   
+  
+
     async ngOnInit(): Promise<void> {
+      console.log(this.route.snapshot)
+      const id=this.route.snapshot.params['id'];
+      this.mascota= await this.obtenerMascota(id);
+      console.log("data mascota ",this.mascota)
       this.buildForm();
-       this.obtenerMascota(this.dataMascotaService.info);
     }
 
     private buildForm(){
       this.formActMascota = this.formBuilder.group({
-        nombre:['', Validators.required],
-        edad: ['', Validators.required],
-        especie: ['', Validators.required],
-        fundacion: ['', Validators.required],
-        especial: [''],
+        nombre:[this.mascota.nombre, Validators.required],
+        edad: [this.mascota.edad, Validators.required],
+        especie: [this.mascota.especie, Validators.required],
+        fundacion: [this.mascota.fundacion, Validators.required],
+        especieselect:[""],
+        especial: ['']
       })
     }
 
-    public actualizarMascota(){
-      
+ 
+    public actualizarMascota(){ 
+       
       console.log("data: ",this.dataMascotaService.info, "formulario: ",this.formActMascota.value)
       this.MascotasService.actualizarMascota(this.formActMascota.value, this.dataMascotaService.info).then(response => {
         alert("Mascota actualizada correctamente");
+        console.log(this.formActMascota.value);
         this.router.navigate(['/mascotas']);
       }).catch(error => {
         this.router.navigate(['/error']);
@@ -58,7 +56,6 @@ export class ActualizarMascotaComponent implements OnInit {
     public async  obtenerMascota(id: number): Promise<any> {
       try {
         const response = await this.MascotasService.obtenerMascota(id);
-        this.mascota=response.datos;
         return response.datos;
       }
   

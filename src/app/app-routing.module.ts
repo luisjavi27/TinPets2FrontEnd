@@ -12,7 +12,7 @@ import { ActualizarMascotaComponent } from './components/actualizar-mascota/actu
 const routes: Routes = [
   {path: 'mascotas', component:MascotasComponent },
   {path: 'formularioMascota', component:FormularioMascotaComponent},
-  {path: 'formularioEditarMascota', component:ActualizarMascotaComponent},
+  {path: 'formularioEditarMascota/:id', component:ActualizarMascotaComponent},
   // {path:'**', redirectTo:'mascotas'} // redirecciona a otra ruta ya creada, el ** es cuando no encuentra la ruta
   {path:'fundaciones', component: FundacionesComponent},
   {path: 'error', component: ErrorComponent},
